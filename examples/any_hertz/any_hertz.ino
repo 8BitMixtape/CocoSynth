@@ -15,10 +15,10 @@
 // part of cocomaketinyriot
 
 
-#include <TeenySynth.h>
+#include <CocoSynth.h>
 #include <util/delay.h>
 
-TeenySynth synth;    //-Make a synth
+CocoSynth synth;    //-Make a synth
 
 void setup() {
 

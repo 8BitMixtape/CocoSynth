@@ -49,8 +49,8 @@
 
 
 
-#include "TeenySynth.h"
-TeenySynth synth;
+#include "CocoSynth.h"
+CocoSynth synth;
 
 void setup() {
 

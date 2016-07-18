@@ -1,8 +1,8 @@
-#include <TeenySynth.h>
+#include <CocoSynth.h>
 #include <util/delay.h>
 #include <Arduino.h>
 
-TeenySynth synth;    //-Make a synth
+CocoSynth synth;    //-Make a synth
 
 
 int melody[] = {

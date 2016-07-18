@@ -240,7 +240,7 @@ SIGNAL(SOUND_OUT_INTERRUPT)
     tim++;
 }
 
-class TeenySynth
+class CocoSynth
 {
 private:
     uint8_t default_clock;
@@ -250,7 +250,7 @@ public:
     //  Startup default
     //*********************************************************************
 
-    TeenySynth()
+    CocoSynth()
     {
         default_clock = (F_CPU/TMR_PRESCALE)/FS;
     }

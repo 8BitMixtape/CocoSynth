@@ -9,6 +9,7 @@
 //*************************************************************************************
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "tables.h"
 
 /*************************************************
@@ -402,6 +403,17 @@ public:
 #endif
 
 #if defined(__AVR_ATtiny85__)
+
+        //disable USI to save power as we are not using it
+        PRR = 1<<PRUSI;
+
+        //set clock source for PWM -datasheet p94
+        PLLCSR |= (1 << PLLE);               // Enable PLL (64 MHz)
+        _delay_us(100);                      // Wait for a steady state
+        while (!(PLLCSR & (1 << PLOCK)));    // Ensure PLL lock
+        PLLCSR |= (1 << PCKE);               // Enable PLL as clock source for timer 1
+
+
         //Timer1 setup
         TCCR1 |= _BV(CTC1); //clear timer on compare
         TIMSK |= _BV(OCIE1A); //activate compare interruppt

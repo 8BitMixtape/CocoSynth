@@ -180,7 +180,6 @@ volatile unsigned int EFTW[4] =
     10, 10, 10, 10
 };               //-Envelope speed tuning word
 volatile unsigned char divider = 4;                             //-Sample rate decimator for envelope
-volatile unsigned int tim = 0;
 volatile unsigned char tik = 0;
 volatile unsigned char output_mode;
 
@@ -236,7 +235,6 @@ ISR(SOUND_OUT_INTERRUPT)
     //************************************************
     //  FTW[divider] = PITCH[divider] + (int)   (((PITCH[divider]/64)*(EPCW[divider]/64)) /128)*MOD[divider];
     FTW[divider] = PITCH[divider] + (int)   (((PITCH[divider]>>6)*(EPCW[divider]>>6))/128)*MOD[divider];
-    tim++;
 }
 
 class CocoSynth

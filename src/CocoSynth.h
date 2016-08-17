@@ -192,7 +192,7 @@ uint8_t millis_subtimer = 0;
 //  Audio driver interrupt
 //*********************************************************************************************
 
-SIGNAL(SOUND_OUT_INTERRUPT)
+ISR(SOUND_OUT_INTERRUPT)
 {
 
 

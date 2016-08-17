@@ -195,14 +195,12 @@ uint8_t millis_subtimer = 0;
 SIGNAL(SOUND_OUT_INTERRUPT)
 {
 
-    unsigned long m = millis_timer_millis;
 
     millis_subtimer++;
     if (millis_subtimer > 19)
         {
             millis_subtimer = 0;
-            m += 1;
-            millis_timer_millis = m;
+            millis_timer_millis += 1;
         }
 
     //-------------------------------

@@ -15,10 +15,10 @@
 // Modified by manticore to support attiny85/84
 // part of cocomaketinyriot
 
-#include <CocoSynth.h>
+#include <NeoSynth.h>
 #include <util/delay.h>
 
-CocoSynth synth;    //-Make as synth
+NeoSynth synth;    //-Make as synth
 
 void setup()
 {

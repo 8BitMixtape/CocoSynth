@@ -49,8 +49,8 @@
 
 
 
-#include "CocoSynth.h"
-CocoSynth synth;
+#include "NeoSynth.h"
+NeoSynth synth;
 
 void setup() {
 

@@ -1,7 +1,7 @@
 #include <util/delay.h>
-#include <CocoSynth.h>
+#include <NeoSynth.h>
 
-CocoSynth synth;
+NeoSynth synth;
 
 #define DEBUG PB1
 
@@ -134,7 +134,7 @@ void loop() {
 
 
 //disable millis
-//make timer available for CocoSynth
+//make timer available for NeoSynth
 int main(void)
 {
     //init();

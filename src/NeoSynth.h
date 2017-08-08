@@ -237,7 +237,7 @@ ISR(SOUND_OUT_INTERRUPT)
     FTW[divider] = PITCH[divider] + (int)   (((PITCH[divider]>>6)*(EPCW[divider]>>6))/128)*MOD[divider];
 }
 
-class CocoSynth
+class NeoSynth
 {
 private:
     uint8_t default_clock;
@@ -247,7 +247,7 @@ public:
     //  Startup default
     //*********************************************************************
 
-    CocoSynth()
+    NeoSynth()
     {
         default_clock = (F_CPU/TMR_PRESCALE)/FS;
     }
@@ -345,7 +345,9 @@ public:
         //+PWM SETUP
         TCCR0A |= (1<<WGM00)|(1<<WGM01); //Fast pwm
         //TCCR0A |= (1<<WGM00) ; //Phase correct pwm
-        TCCR0A |= (1<<COM0A1); //Clear OC0A/OC0B on Compare Match when up-counting.
+        //TCCR0A |= (1<<COM0A1); //USE PB0 --> Clear OC0A/OC0B on Compare Match when up-counting.        
+        TCCR0A |= (1<<COM0B1); //USE PB1 --> Clear OC0A/OC0B on Compare Match when up-counting.
+        
         TCCR0B |= (1<<CS00);//no prescale
         //+END PWM
 

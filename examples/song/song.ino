@@ -42,3 +42,17 @@ void loop()
     }
 
 }
+
+
+
+//disable millis
+//make timer available for NeoSynth
+int main(void)
+{
+    //init();
+    setup();
+    for (;;)
+        loop();
+    return 0;
+} 
+

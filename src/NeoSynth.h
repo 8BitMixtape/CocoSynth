@@ -138,7 +138,7 @@
 #endif
 
 #if defined(__AVR_ATtiny85__)
-#define SOUND_OUT_PORT OCR0A
+#define SOUND_OUT_PORT OCR0B
 #define SOUND_OUT_INTERRUPT TIMER1_COMPA_vect
 #define VOL_UP 0
 #define TMR_PRESCALE 16.0
@@ -351,8 +351,8 @@ public:
         TCCR0B |= (1<<CS00);//no prescale
         //+END PWM
 
-        OCR0A = 127;
-        SET(DDRB, PB0); //-PWM pin
+        SOUND_OUT_PORT = 127;
+        SET(DDRB, PB1); //-PWM pin
 #endif
 
         sei();
